@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Portafolio",
-    "description": "Desarrollador Frontend especializado en interfaces rápidas, accesibles y bien diseñadas."
+    "description": "Portafolio de Emilio San Martín Pezoa, desarrollador full stack web y móvil y estudiante de Ingeniería Civil Informática en Santiago, Chile."
   },
   "nav": {
     "about": "Sobre mí",
@@ -29,10 +29,12 @@
     "subtitle": "Una selección de trabajos recientes.",
     "demo": "Demo",
     "code": "Código",
-    "featured": "Destacado"
+    "featured": "Destacado",
+    "empty": "Estoy documentando mis proyectos para mostrarlos aquí muy pronto. Mientras tanto, puedes revisar mi trabajo en GitHub.",
+    "viewGithub": "Ver mi GitHub"
   },
   "experience": {
-    "title": "Experiencia"
+    "title": "Formación y experiencia"
   },
   "skills": {
     "title": "Skills"

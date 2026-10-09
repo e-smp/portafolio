@@ -5,6 +5,11 @@
 import type { Locale } from "@/i18n/config";
 
 export type Localized = Record<Locale, string>;
+/** Texto igual en todos los idiomas (string) o traducido (Localized). */
+export type Text = string | Localized;
+
+export const localize = (value: Text, locale: Locale) =>
+  typeof value === "string" ? value : value[locale];
 
 export type SocialIcon = "github" | "linkedin" | "x";
 
@@ -21,35 +26,44 @@ export const siteUrl =
     : "http://localhost:3000");
 
 export const profile = {
-  name: "Tu Nombre",
-  initials: "TN",
-  role: { es: "Desarrollador Frontend", en: "Frontend Developer" } satisfies Localized,
-  location: { es: "Madrid, España", en: "Madrid, Spain" } satisfies Localized,
-  tagline: {
-    es: "Construyo interfaces web rápidas, accesibles y cuidadas al detalle con React, Next.js y TypeScript.",
-    en: "I build fast, accessible and carefully crafted web interfaces with React, Next.js and TypeScript.",
+  name: "Emilio San Martín Pezoa",
+  initials: "ES",
+  role: {
+    es: "Desarrollador Full Stack · Web & Mobile",
+    en: "Full Stack Developer · Web & Mobile",
   } satisfies Localized,
-  email: "hola@example.com",
+  location: { es: "Santiago, Chile", en: "Santiago, Chile" } satisfies Localized,
+  tagline: {
+    es: "Construyo soluciones web y móviles rápidas, accesibles y cuidadas al detalle con React, Next.js, Flutter y Django.",
+    en: "I build fast, accessible and carefully crafted web and mobile solutions with React, Next.js, Flutter and Django.",
+  } satisfies Localized,
+  email: "e.sanmartinpez@gmail.com",
   available: true,
   bio: [
     {
-      es: "Soy desarrollador frontend con foco en la experiencia de usuario y el rendimiento. Me gusta convertir diseños complejos en interfaces simples, mantenibles y agradables de usar.",
-      en: "I'm a frontend developer focused on user experience and performance. I enjoy turning complex designs into simple, maintainable and delightful interfaces.",
+      es: "Soy estudiante de Ingeniería Civil Informática en la Universidad Autónoma de Chile —cursando el octavo de once semestres— y desarrollo soluciones de software tanto web como móviles.",
+      en: "I'm a Computer Engineering student at Universidad Autónoma de Chile —currently in my eighth of eleven semesters— and I build software solutions for both web and mobile.",
     },
     {
-      es: "Cuando no estoy programando, exploro nuevas herramientas, contribuyo a proyectos open source y escribo sobre lo que aprendo.",
-      en: "When I'm not coding, I explore new tools, contribute to open source and write about what I learn.",
+      es: "Disfruto todo el ciclo de un proyecto: analizar el problema, modelar la base de datos, evaluar la arquitectura, el diseño y el stack más adecuado, y luego meter las manos en el código. En la universidad he sido Product Owner en varios proyectos, comunicándome con clientes y levantando requerimientos funcionales y no funcionales.",
+      en: "I enjoy the whole lifecycle of a project: analyzing the problem, modeling the database, evaluating the right architecture, design and stack, and then getting my hands dirty with the code. At university I've been the Product Owner on several projects, working directly with clients and gathering functional and non-functional requirements.",
+    },
+    {
+      es: "Llegué a la informática porque me gusta resolver problemas reales: ver a un cliente satisfecho con el producto que le entregué es lo que más me motiva. Fuera del código practico deportes de contacto como MMA y judo, y juego videojuegos.",
+      en: "I got into computing because I love solving real problems: seeing a client happy with the product I delivered is what motivates me most. Outside of code, I train contact sports like MMA and judo, and I play video games.",
     },
   ] satisfies Localized[],
   highlights: [
-    { value: "5+", label: { es: "años de experiencia", en: "years of experience" } },
-    { value: "30+", label: { es: "proyectos entregados", en: "projects shipped" } },
-    { value: "100", label: { es: "Lighthouse objetivo", en: "Lighthouse target" } },
+    {
+      value: "8/11",
+      label: { es: "semestres de Ing. Civil Informática", en: "semesters of Computer Engineering" },
+    },
+    { value: "3", label: { es: "proyectos desarrollados", en: "projects built" } },
+    { value: "Web & Mobile", label: { es: "soluciones multiplataforma", en: "cross-platform solutions" } },
   ] satisfies { value: string; label: Localized }[],
   socials: [
-    { label: "GitHub", href: "https://github.com/", icon: "github" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/", icon: "linkedin" },
-    { label: "X", href: "https://x.com/", icon: "x" },
+    { label: "GitHub", href: "https://github.com/e-smp", icon: "github" },
+    // Pendiente: { label: "LinkedIn", href: "https://www.linkedin.com/in/...", icon: "linkedin" },
   ] satisfies { label: string; href: string; icon: SocialIcon }[],
 };
 
@@ -62,119 +76,74 @@ export type Project = {
   featured?: boolean;
 };
 
-export const projects: Project[] = [
-  {
-    title: "Dashboard Analytics",
-    description: {
-      es: "Panel de métricas en tiempo real con gráficos interactivos, filtros avanzados y exportación de datos.",
-      en: "Real-time metrics dashboard with interactive charts, advanced filters and data export.",
-    },
-    tags: ["Next.js", "TypeScript", "Tailwind", "Recharts"],
-    demo: "https://example.com",
-    repo: "https://github.com/",
-    featured: true,
-  },
-  {
-    title: "E-commerce Headless",
-    description: {
-      es: "Tienda online headless con carrito persistente, pagos con Stripe y CMS para gestionar el catálogo.",
-      en: "Headless online store with persistent cart, Stripe payments and a CMS to manage the catalog.",
-    },
-    tags: ["React", "Stripe", "Sanity", "Zustand"],
-    demo: "https://example.com",
-    repo: "https://github.com/",
-  },
-  {
-    title: "Design System",
-    description: {
-      es: "Librería de componentes accesibles documentada con Storybook y publicada en npm.",
-      en: "Accessible component library documented with Storybook and published to npm.",
-    },
-    tags: ["React", "Radix UI", "Storybook", "Vitest"],
-    repo: "https://github.com/",
-  },
-  {
-    title: "App de Tareas",
-    description: {
-      es: "Aplicación de productividad offline-first con sincronización y drag & drop.",
-      en: "Offline-first productivity app with sync and drag & drop.",
-    },
-    tags: ["Next.js", "PWA", "IndexedDB"],
-    demo: "https://example.com",
-  },
-  {
-    title: "CLI Toolkit",
-    description: {
-      es: "Herramienta de línea de comandos para generar y automatizar proyectos frontend.",
-      en: "Command-line tool to scaffold and automate frontend projects.",
-    },
-    tags: ["Node.js", "TypeScript"],
-    repo: "https://github.com/",
-  },
-  {
-    title: "Blog Técnico",
-    description: {
-      es: "Blog con MDX, búsqueda instantánea y generación estática optimizada para SEO.",
-      en: "MDX blog with instant search and SEO-optimized static generation.",
-    },
-    tags: ["Next.js", "MDX", "SEO"],
-    demo: "https://example.com",
-    repo: "https://github.com/",
-  },
-];
+/** Mientras esté vacío, la sección muestra un aviso con enlace a GitHub. */
+export const projects: Project[] = [];
 
 export type ExperienceItem = {
-  company: string;
-  role: Localized;
+  title: Localized;
+  /** Organización; se muestra como "@ organización". Opcional. */
+  organization?: string;
   period: Localized;
   description: Localized;
-  tags: string[];
+  tags: Text[];
 };
 
 export const experience: ExperienceItem[] = [
   {
-    company: "Empresa Actual",
-    role: { es: "Senior Frontend Developer", en: "Senior Frontend Developer" },
+    title: { es: "Desarrollador en práctica", en: "Software Developer Intern" },
+    period: { es: "Próximamente", en: "Coming soon" },
+    description: {
+      es: "Por iniciar mi primera práctica profesional como desarrollador.",
+      en: "About to start my first professional internship as a developer.",
+    },
+    tags: [],
+  },
+  {
+    title: { es: "Product Owner · Proyectos universitarios", en: "Product Owner · University projects" },
+    organization: "Universidad Autónoma de Chile",
     period: { es: "2023 — Actualidad", en: "2023 — Present" },
     description: {
-      es: "Lidero el desarrollo del frontend de la plataforma principal, mejorando el rendimiento un 40% y estableciendo el design system.",
-      en: "Leading frontend development of the core platform, improving performance by 40% and establishing the design system.",
+      es: "Lideré la comunicación con clientes en varios proyectos: levantamiento de requerimientos funcionales y no funcionales, modelado de bases de datos y evaluación de arquitectura y stack, participando también en el desarrollo.",
+      en: "Led client communication on several projects: gathering functional and non-functional requirements, database modeling and evaluating architecture and stack, while also contributing to development.",
     },
-    tags: ["Next.js", "TypeScript", "GraphQL"],
+    tags: [
+      { es: "Requerimientos", en: "Requirements" },
+      { es: "Modelado de datos", en: "Data modeling" },
+      { es: "Arquitectura", en: "Architecture" },
+    ],
   },
   {
-    company: "Startup Tech",
-    role: { es: "Frontend Developer", en: "Frontend Developer" },
-    period: { es: "2021 — 2023", en: "2021 — 2023" },
+    title: { es: "Ingeniería Civil Informática", en: "Computer Engineering (B.Sc. + Professional Degree)" },
+    organization: "Universidad Autónoma de Chile",
+    period: { es: "2023 — Actualidad", en: "2023 — Present" },
     description: {
-      es: "Desarrollé funcionalidades clave del producto SaaS y colaboré estrechamente con diseño para iterar rápido.",
-      en: "Built key features of the SaaS product and worked closely with design to iterate quickly.",
+      es: "Cursando el octavo de once semestres, con foco en desarrollo de software web y móvil.",
+      en: "Currently in my eighth of eleven semesters, focused on web and mobile software development.",
     },
-    tags: ["React", "Redux", "Jest"],
-  },
-  {
-    company: "Agencia Digital",
-    role: { es: "Desarrollador Web Junior", en: "Junior Web Developer" },
-    period: { es: "2019 — 2021", en: "2019 — 2021" },
-    description: {
-      es: "Maquetación y desarrollo de webs corporativas y landing pages para clientes de distintos sectores.",
-      en: "Built corporate websites and landing pages for clients across different industries.",
-    },
-    tags: ["JavaScript", "SCSS", "WordPress"],
+    tags: ["Python", "Java", "C#", "PostgreSQL"],
   },
 ];
 
-export const skills: { category: Localized; items: string[] }[] = [
+export const skills: { category: Localized; items: Text[] }[] = [
   {
-    category: { es: "Frontend", en: "Frontend" },
-    items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion", "HTML & CSS"],
+    category: { es: "Frontend & Mobile", en: "Frontend & Mobile" },
+    items: ["React", "Next.js", "Flutter", "Dart"],
   },
   {
     category: { es: "Backend", en: "Backend" },
-    items: ["Node.js", "PostgreSQL", "Prisma", "REST", "GraphQL"],
+    items: ["Django", "Python", "Java", "C#"],
   },
   {
-    category: { es: "Herramientas", en: "Tools" },
-    items: ["Git", "Figma", "Vitest", "Playwright", "Docker", "Vercel"],
+    category: { es: "Bases de datos & DevOps", en: "Databases & DevOps" },
+    items: ["PostgreSQL", "MongoDB", "Docker"],
+  },
+  {
+    category: { es: "Análisis & Producto", en: "Analysis & Product" },
+    items: [
+      { es: "Modelado de bases de datos", en: "Database modeling" },
+      { es: "Arquitectura de software", en: "Software architecture" },
+      { es: "Levantamiento de requerimientos", en: "Requirements gathering" },
+      "Product Owner",
+    ],
   },
 ];

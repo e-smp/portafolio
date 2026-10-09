@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Portfolio",
-    "description": "Frontend developer focused on fast, accessible and well-crafted interfaces."
+    "description": "Portfolio of Emilio San Martín Pezoa, full stack web and mobile developer and Computer Engineering student based in Santiago, Chile."
   },
   "nav": {
     "about": "About",
@@ -29,10 +29,12 @@
     "subtitle": "A selection of recent work.",
     "demo": "Demo",
     "code": "Code",
-    "featured": "Featured"
+    "featured": "Featured",
+    "empty": "I'm documenting my projects to showcase them here very soon. In the meantime, feel free to check out my work on GitHub.",
+    "viewGithub": "View my GitHub"
   },
   "experience": {
-    "title": "Experience"
+    "title": "Education & Experience"
   },
   "skills": {
     "title": "Skills"
