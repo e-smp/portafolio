@@ -8,7 +8,17 @@ export type Localized = Record<Locale, string>;
 
 export type SocialIcon = "github" | "linkedin" | "x";
 
-export const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://example.com";
+/**
+ * URL pública del sitio (SEO, sitemap). Orden de prioridad:
+ * 1. NEXT_PUBLIC_SITE_URL, si la defines (p. ej. al usar un dominio propio).
+ * 2. VERCEL_PROJECT_PRODUCTION_URL, que Vercel inyecta automáticamente (ej. "mi-sitio.vercel.app").
+ * 3. localhost en desarrollo.
+ */
+export const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ??
+  (process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : "http://localhost:3000");
 
 export const profile = {
   name: "Tu Nombre",

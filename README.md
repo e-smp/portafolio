@@ -17,7 +17,7 @@ npm run lint
 | Nombre, bio, proyectos, experiencia, skills, redes | `src/data/profile.ts` |
 | Textos de la interfaz (ES / EN) | `src/messages/es.json`, `src/messages/en.json` |
 | Colores (acento, fondo…) para modo claro y oscuro | tokens en `src/app/globals.css` |
-| URL pública (SEO, sitemap) | variable de entorno `NEXT_PUBLIC_SITE_URL` |
+| URL pública (SEO, sitemap) | automática en Vercel; define `NEXT_PUBLIC_SITE_URL` solo si usas un dominio propio |
 | Favicon | `src/app/favicon.ico` |
 
 ## Cómo funciona
