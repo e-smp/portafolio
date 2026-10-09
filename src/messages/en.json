@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Portfolio",
+    "description": "Frontend developer focused on fast, accessible and well-crafted interfaces."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "experience": "Experience",
+    "skills": "Skills",
+    "contact": "Contact",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "toggleTheme": "Toggle light/dark theme",
+    "switchLanguage": "Ver en español",
+    "skipToContent": "Skip to content"
+  },
+  "hero": {
+    "greeting": "Hi, I'm",
+    "available": "Available for new projects",
+    "ctaProjects": "View projects",
+    "ctaContact": "Get in touch"
+  },
+  "about": {
+    "title": "About me"
+  },
+  "projects": {
+    "title": "Projects",
+    "subtitle": "A selection of recent work.",
+    "demo": "Demo",
+    "code": "Code",
+    "featured": "Featured"
+  },
+  "experience": {
+    "title": "Experience"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "contact": {
+    "title": "Contact",
+    "heading": "Let's build something together",
+    "text": "I'm open to new opportunities and collaborations. Drop me a line and I'll get back to you as soon as possible.",
+    "cta": "Send an email"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js and Tailwind CSS",
+    "backToTop": "Back to top"
+  },
+  "notFound": {
+    "title": "Page not found",
+    "back": "Back home"
+  }
+}

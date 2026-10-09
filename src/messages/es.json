@@ -1,0 +1,54 @@
+{
+  "meta": {
+    "title": "Portafolio",
+    "description": "Desarrollador Frontend especializado en interfaces rápidas, accesibles y bien diseñadas."
+  },
+  "nav": {
+    "about": "Sobre mí",
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "skills": "Skills",
+    "contact": "Contacto",
+    "openMenu": "Abrir menú",
+    "closeMenu": "Cerrar menú",
+    "toggleTheme": "Cambiar tema claro/oscuro",
+    "switchLanguage": "Ver en inglés",
+    "skipToContent": "Saltar al contenido"
+  },
+  "hero": {
+    "greeting": "Hola, soy",
+    "available": "Disponible para nuevos proyectos",
+    "ctaProjects": "Ver proyectos",
+    "ctaContact": "Contactar"
+  },
+  "about": {
+    "title": "Sobre mí"
+  },
+  "projects": {
+    "title": "Proyectos",
+    "subtitle": "Una selección de trabajos recientes.",
+    "demo": "Demo",
+    "code": "Código",
+    "featured": "Destacado"
+  },
+  "experience": {
+    "title": "Experiencia"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "contact": {
+    "title": "Contacto",
+    "heading": "¿Construimos algo juntos?",
+    "text": "Estoy abierto a nuevas oportunidades y colaboraciones. Escríbeme y te responderé lo antes posible.",
+    "cta": "Enviar email"
+  },
+  "footer": {
+    "builtWith": "Hecho con Next.js y Tailwind CSS",
+    "backToTop": "Volver arriba"
+  },
+  "notFound": {
+    "title": "Página no encontrada",
+    "back": "Volver al inicio"
+  }
+}
